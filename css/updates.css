@@ -1,3 +1,93 @@
+ html, body {
+                font-size: 14px;
+            }
+            html,body,h1,h2,h3,h4,h5,h6,p,* {
+                font-family: 'Roboto', sans-serif!important;
+            }
+            body {
+                padding-top: 3.625rem;
+            }
+            .container {
+                max-width: 720px;
+            }
+            header {
+                background-color: #07598a!important;
+            }
+            header.ui.inverted.menu .item {
+                /*color: #5acfca;*/
+                font-size: 1.063rem;
+            }
+            header.ui.inverted.menu .logo.item {
+                color: #5acfca;
+                font-weight: 600;
+                font-size: 1.125rem;
+            }
+            h1.ui.huge.header {
+                font-weight: 800;
+                color: #df3995;
+            }
+            h2.ui.medium.primary.header {
+                display: inline;
+                color: #07598a;
+                font-weight: 800;
+                border-top: 0.1875rem solid #df3995;
+                text-transform: uppercase;
+                padding-top: 0.3125rem;
+            }
+            h2.ui.medium.primary.header .sub.header {
+                margin: calc(2rem - 0.58035714rem) 0;
+                text-transform: none;
+                color: #54c4c3;
+                font-size: 2.125rem;
+                font-weight: 200;
+            }
+            a.ui.circular.small.primary.button {
+                min-width: 9.5rem;
+                background-color: #07598a;
+            }
+            a.ui.circular.small.secondary.button {
+                min-width: 9.5rem;
+                background-color: #df3995;
+            }
+            section.ui.vertical.basic.very.padded.primary.segment {
+                background: #07598a;
+            }
+            h2.ui.medium.secondary.header {
+                display: inline;
+                color: #fff;
+                border-top: 0.1875rem solid #df3995;
+                text-transform: uppercase;
+                padding-top: 0.3125rem;
+            }
+            h2.ui.medium.secondary.header .sub.header {
+                margin: calc(2rem - 0.58035714rem) 0;
+                text-transform: none;
+                color: #fff;
+                font-weight: 200;
+            }
+            .ui.checkbox input[type=checkbox], .ui.checkbox input[type=radio] {
+            }
+            .disabled.field .ui.radio.checkbox label {
+                font-style: italic;
+            }
+            .active.field .ui.radio.checkbox label {
+                font-weight: 600;
+                color: #54c4c3;
+            }
+            .ui.divided.items > .item {
+                border-width: 0.125rem;
+            }
+            .ui.divided.items.feed .item .content .header {
+                font-size: 1.125rem;
+                color: #54c4c3;
+            }
+            .pt-0 {
+                padding-top: 0!important;
+            }
+            footer {
+                background-color: #54c4c3!important;
+            }
+
 
 .header-text-blue {font-size: 26pt; color: #07598A; text-align: left; font-weight: 700; line-height: 34pt;}
 
