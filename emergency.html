@@ -11,9 +11,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css" integrity="sha384-m1fl5JKXaEocK0a/l9MLZd7pvyIwC5VlcXtW8NpMLO/yO5WFDY4fB3/fweZ0niwK" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" integrity="sha384-cCmnk9/Usyhniy2w3rNpYwtigiEbEkWNbjKL8m3+JCdq3ldcPY+fwOhXFsz+iE0P" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900">
 
-     <link href="css/updates-emergency.css" rel="stylesheet" type="text/css" />
+     	<link rel="stylesheet" href="css/updates-emergency.css">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha384-bPV3mA2eo3edoq56VzcPBmG1N1QVUfjYMxVIJPPzyFJyFZ8GFfN7Npt06Zr23qts" crossorigin="anonymous"></script>
     </head>
@@ -31,149 +31,158 @@
             </nav>
         </header>
 
-            <section class="ui vertical basic very padded segment"> 
-                <div class="container">
-                    <h1 class="header-text-magenta">Anchor Emergency Mode: Lorem ipsum</h1>
-                    <a class="ui circular small primary button">
-                        Stay Updated
-                    </a>
-                </div>
-            </section>
+        <section class="ui vertical basic very padded segment"> 
+            <div class="container">
+                <h1 class="header-text-magenta">Anchor Emergency Mode: Lorem ipsum</h1>
+                <a class="ui circular small primary button">
+                    Stay Updated
+                </a>
+            </div>
+        </section>
 
-            <section class="ui vertical basic very padded pt-0 segment"> 
-                <div class="container">
-                    <h2 class="ui medium primary header">
-                        Immediate Assistance 
-                        <div class="sub header">
-                            If this is an emergency call 911 immediately.
-                        </div>
-                    </h2>
-                    <a class="ui circular small secondary button" href="tel:911">
-                        Call 911
-                    </a>
-                </div>
-            </section>
+        <section class="ui vertical basic very padded pt-0 segment"> 
+            <div class="container">
+                <h2 class="ui medium primary header">
+                    Immediate Assistance 
+                    <div class="sub header">
+                        If this is an emergency call 911 immediately.
+                    </div>
+                </h2>
+                <a class="ui circular small secondary button" href="tel:911">
+                    Call 911
+                </a>
+            </div>
+        </section>
 
-            <section class="ui vertical basic very padded primary inverted segment"> 
-                <div class="container">
-                    <h2 class="ui medium secondary header">
-                        Local Agencies
-                        <div class="sub header">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et volutpat turpis. Vestibulum sed congue libero, quis pulvinar elit. Donec in augue eros.
-                        </div>
-                    </h2>
-                    <form class="ui inverted form">
-                        <div class="grouped fields">
-                            <div class="disabled field">
-                                <div class="ui radio checkbox">
-                                    <input type="radio" name="department" tabindex="0" class="hidden">
-                                    <label>NYC Mayor's Office (offline)</label>
-                                </div>
-                            </div>
-                            <div class="disabled field">
-                                <div class="ui radio checkbox">
-                                    <input type="radio" name="department" tabindex="0" class="hidden">
-                                    <label>New York Police Department (offline)</label>
-                                </div>
-                            </div>
-                            <div class="disabled field">
-                                <div class="ui radio checkbox">
-                                    <input type="radio" name="department" tabindex="0" class="hidden">
-                                    <label>Fire Department of New York (offline)</label>
-                                </div>
-                            </div>
-                            <div class="disabled field">
-                                <div class="ui radio checkbox">
-                                    <input type="radio" name="department" tabindex="0" class="hidden">
-                                    <label>RedCross (offline)</label>
-                                </div>
-                            </div>
-                            <div class="active field">
-                                <div class="ui radio checkbox">
-                                    <input type="radio" name="department" checked="" tabindex="0" class="hidden">
-                                    <label>ConEdison (online)</label>
-                                </div>
+        <section class="ui vertical basic very padded primary inverted segment"> 
+            <div class="container">
+                <h2 class="ui medium secondary header">
+                    Local Agencies
+                    <div class="sub header">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et volutpat turpis. Vestibulum sed congue libero, quis pulvinar elit. Donec in augue eros.
+                    </div>
+                </h2>
+                <form class="ui inverted form">
+                    <div class="grouped fields">
+                        <div class="disabled field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="department" tabindex="0" class="hidden">
+                                <label>NYC Mayor's Office (offline)</label>
                             </div>
                         </div>
-                  </form>
-                </div>
-            </section>
-            <div id="map" style="min-height:300px;"></div>
-            <section class="ui vertical basic very padded segment"> 
-                <div class="container">
-                    <h2 class="ui medium primary header">
-                        Current Updates
-                    </h2>
-                    <div class="ui divided items feed">
-                        <div class="item">
-                            <div class="content">
-                                <div class="header">Weather</div>
-                                <div class="description">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="extra col-6 float-left">
-                                    <small>via AccuWeather</small>
-                                </div>
-                                <div class="extra col-6 float-right text-right">
-                                    <small>3 minutes ago</small>
-                                </div>
+                        <div class="disabled field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="department" tabindex="0" class="hidden">
+                                <label>New York Police Department (offline)</label>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="content">
-                                <div class="header">Weather</div>
-                                <div class="description">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="extra col-6 float-left">
-                                    <small>via AccuWeather</small>
-                                </div>
-                                <div class="extra col-6 float-right text-right">
-                                    <small>3 minutes ago</small>
-                                </div>
+                        <div class="disabled field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="department" tabindex="0" class="hidden">
+                                <label>Fire Department of New York (offline)</label>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="content">
-                                <div class="header">Weather</div>
-                                <div class="description">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="extra col-6 float-left">
-                                    <small>via AccuWeather</small>
-                                </div>
-                                <div class="extra col-6 float-right text-right">
-                                    <small>3 minutes ago</small>
-                                </div>
+                        <div class="disabled field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="department" tabindex="0" class="hidden">
+                                <label>RedCross (offline)</label>
+                            </div>
+                        </div>
+                        <div class="active field">
+                            <div class="ui radio checkbox">
+                                <input type="radio" name="department" checked="" tabindex="0" class="hidden">
+                                <label>ConEdison (online)</label>
+                            </div>
+                        </div>
+                    </div>
+              </form>
+            </div>
+        </section>
+        <div id="map" style="min-height:300px;"></div>
+        <section class="ui vertical basic very padded segment"> 
+            <div class="container">
+                <h2 class="ui medium primary header">
+                    Current Updates
+                </h2>
+                <div id="accuweather"></div>
+            </div>
+           	<!--
+                <div class="ui divided items feed">
+                    <div class="item">
+                        <div class="content">
+                            <div class="header">Weather</div>
+                            <div class="description">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="extra col-6 float-left">
+                                <small>via AccuWeather</small>
+                            </div>
+                            <div class="extra col-6 float-right text-right">
+                                <small>3 minutes ago</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content">
+                            <div class="header">Weather</div>
+                            <div class="description">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="extra col-6 float-left">
+                                <small>via AccuWeather</small>
+                            </div>
+                            <div class="extra col-6 float-right text-right">
+                                <small>3 minutes ago</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content">
+                            <div class="header">Weather</div>
+                            <div class="description">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="extra col-6 float-left">
+                                <small>via AccuWeather</small>
+                            </div>
+                            <div class="extra col-6 float-right text-right">
+                                <small>3 minutes ago</small>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+             -->
+        </section>
 
-            <footer class="ui vertical basic inverted padded segment">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-6">
-                            Footer
-                        </div>
-                        <div class="col-6 text-right">
-                            Anchor 2017
-                        </div>
+        <footer class="ui vertical basic inverted padded segment">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        Footer
+                    </div>
+                    <div class="col-6 text-right">
+                        Anchor 2017
                     </div>
                 </div>
-            </footer>
+            </div>
+        </footer>
 
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js" integrity="sha384-Ail6li4BXa+GztK4v0z2B8vXM69Kl5gw8vj3uPEna+3hHY9wAixO0hLotSJlOjlT" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js" integrity="sha384-o9KO9jVK1Q4ybtHgJCCHfgQrTRNlkT6SL3j/qMuBMlDw3MmFrgrOHCOaIMJWGgK5" crossorigin="anonymous"></script>
+        <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js" integrity="sha384-Ail6li4BXa+GztK4v0z2B8vXM69Kl5gw8vj3uPEna+3hHY9wAixO0hLotSJlOjlT" crossorigin="anonymous"></script>
+        <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script async defer src="js/twitterFeed.min.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdZOHZxUTasVlFnoMk9U55zJN4ZAPfRVY&callback=initMap"></script>
         <script>
-            $(function(){
-                $('.ui.radio.checkbox').checkbox();
-            });
             function initMap() {
                 var map = new google.maps.Map(document.getElementById('map'), {
                   center: {lat: 40.7590562, lng: -74.0042502},
-                  zoom: 12
+                  scrollwheel: false,
+			      navigationControl: false,
+			      mapTypeControl: false,
+			      scaleControl: false,
+			      draggable: false,
+                  zoom: 15
                 });
                 /* var infoWindow = new google.maps.InfoWindow({map: map}); */
                 if (navigator.geolocation) {
@@ -199,16 +208,9 @@
                                   'Error: The Geolocation service failed.' :
                                   'Error: Your browser doesn\'t support geolocation.');
             }
+            $(function(){
+                $('.ui.radio.checkbox').checkbox();
+            });
         </script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdZOHZxUTasVlFnoMk9U55zJN4ZAPfRVY&callback=initMap"></script>
-
-
-
-    <!-- jQuery Version 1.11.1 -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.js"></script>
-
     </body>
 </html>

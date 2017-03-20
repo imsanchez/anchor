@@ -32,64 +32,64 @@
                 color: #54C4C3;
                 font-weight: 800;
                 border-top: 0.1875rem solid #07598A;
-                text-transform: uppercase;
-                padding-top: 0.3125rem;
-                font-size: 20px;
-            }
-            h2.ui.medium.primary.header .sub.header {
-                margin: calc(2rem - 0.58035714rem) 0;
-                text-transform: none;
-                color: #54c4c3;
-                font-size: 2.125rem;
-                font-weight: 200;
-            }
-            a.ui.circular.small.primary.button {
-                min-width: 9.5rem;
-                background-color: #D71596;
-            }
-            a.ui.circular.small.secondary.button {
-                min-width: 9.5rem;
-                background-color: #07598A;
-            }
-            section.ui.vertical.basic.very.padded.primary.segment {
-                background: #54C4C3;
-            }
-            h2.ui.medium.secondary.header {
-                display: inline;
-                color: #07598A;
-                border-top: 0.1875rem solid #07598A;
-                text-transform: uppercase;
-                padding-top: 0.3125rem;
-            }
-            h2.ui.medium.secondary.header .sub.header {
-                margin: calc(2rem - 0.58035714rem) 0;
-                text-transform: none;
-                color: #fff;
-                font-weight: 200;
-                line-height: 26pt;
-            }
-            .ui.checkbox input[type=checkbox], .ui.checkbox input[type=radio] {
-            }
-            .disabled.field .ui.radio.checkbox label {
-                font-style: italic;
-            }
-            .active.field .ui.radio.checkbox label {
-                font-weight: 600;
-                color: #54c4c3;
-            }
-            .ui.divided.items > .item {
-                border-width: 0.125rem;
-            }
-            .ui.divided.items.feed .item .content .header {
-                font-size: 1.125rem;
-                color: #54c4c3;
-            }
-            .pt-0 {
-                padding-top: 0!important;
-            }
-            footer {
-                background-color: #DF3A95!important;
-            }
+    text-transform: uppercase;
+    padding-top: 0.3125rem;
+    font-size: 20px;
+}
+h2.ui.medium.primary.header .sub.header {
+    margin: calc(2rem - 0.58035714rem) 0;
+    text-transform: none;
+    color: #54c4c3;
+    font-size: 2.125rem;
+    font-weight: 200;
+}
+a.ui.circular.small.primary.button {
+    min-width: 9.5rem;
+    background-color: #D71596;
+}
+a.ui.circular.small.secondary.button {
+    min-width: 9.5rem;
+    background-color: #07598A;
+}
+section.ui.vertical.basic.very.padded.primary.segment {
+    background: #54C4C3;
+}
+h2.ui.medium.secondary.header {
+    display: inline;
+    color: #07598A;
+    border-top: 0.1875rem solid #07598A;
+    text-transform: uppercase;
+    padding-top: 0.3125rem;
+}
+h2.ui.medium.secondary.header .sub.header {
+    margin: calc(2rem - 0.58035714rem) 0;
+    text-transform: none;
+    color: #fff;
+    font-weight: 200;
+    line-height: 26pt;
+}
+.ui.checkbox input[type=checkbox], .ui.checkbox input[type=radio] {
+}
+.disabled.field .ui.radio.checkbox label {
+    font-style: italic;
+}
+.active.field .ui.radio.checkbox label {
+    font-weight: 600;
+    color: #54c4c3;
+}
+.ui.divided.items > .item {
+    border-width: 0.125rem;
+}
+.ui.divided.items.feed .item .content .header {
+    font-size: 1.125rem;
+    color: #54c4c3;
+}
+.pt-0 {
+    padding-top: 0!important;
+}
+footer {
+    background-color: #DF3A95!important;
+}
 
 
 .header-text-blue {font-size: 26pt; color: #07598A; text-align: left; font-weight: 700; line-height: 34pt;}
