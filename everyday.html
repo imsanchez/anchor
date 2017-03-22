@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" integrity="sha384-i/ZLCOBtDmoxztrtShNvc3vGe1+IbOGDzkZNC4KLXurv/BT7QInnM2AsPnvbgXH/" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css" integrity="sha384-m1fl5JKXaEocK0a/l9MLZd7pvyIwC5VlcXtW8NpMLO/yO5WFDY4fB3/fweZ0niwK" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" integrity="sha384-cCmnk9/Usyhniy2w3rNpYwtigiEbEkWNbjKL8m3+JCdq3ldcPY+fwOhXFsz+iE0P" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
 
         <link href="css/updates-everyday.css" rel="stylesheet" type="text/css" />
@@ -18,18 +18,27 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha384-bPV3mA2eo3edoq56VzcPBmG1N1QVUfjYMxVIJPPzyFJyFZ8GFfN7Npt06Zr23qts" crossorigin="anonymous"></script>
     </head>
     <body>
-        <header class="ui top fixed massive inverted borderless menu">
-            <nav class="container">
-                <div class="logo item">
-                    Anchor
+        <div class="ui wide massive sidebar inverted teal vertical menu">
+            <a class="item">About Anchor</a>
+            <a class="item">Local Agencies</a>
+            <a class="item" href="tel:911">Call 911</a>
+        </div>
+        <div class="pusher">
+            <header class="ui top fixed massive inverted borderless menu">
+                <div class="nav-container menu">
+                    <div class="logo item">
+                        Anchor
+                    </div>
+                    <div class="right menu hidden-sm-down">
+                        <a class="item">About Anchor</a>
+                        <a class="item">Local Agencies</a>
+                        <a class="item" href="tel:911">Call 911</a>
+                    </div>
+                    <div class="right menu hidden-md-up">
+                        <a class="item" id="sidebar"><i class="material-icons">menu</i></a>
+                    </div>
                 </div>
-                <div class="right menu">
-                    <a class="item">About Anchor</a>
-                    <a class="item">Local Agencies</a>
-                    <a class="item" href="tel:911">Call 911</a>
-                </div>
-            </nav>
-        </header>
+            </header>
 
             <section class="ui vertical basic very padded segment"> 
                 <div class="container">
@@ -98,7 +107,7 @@
                     </div>
                 </div>
             </footer>
-
+        </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js" integrity="sha384-o9KO9jVK1Q4ybtHgJCCHfgQrTRNlkT6SL3j/qMuBMlDw3MmFrgrOHCOaIMJWGgK5" crossorigin="anonymous"></script>
         <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js" integrity="sha384-Ail6li4BXa+GztK4v0z2B8vXM69Kl5gw8vj3uPEna+3hHY9wAixO0hLotSJlOjlT" crossorigin="anonymous"></script>
@@ -108,6 +117,9 @@
         <script>
             $(function(){
                 $('.ui.radio.checkbox').checkbox();
+                $('#sidebar').click(function() {
+                    $('.ui.sidebar').sidebar('toggle');
+                });
             });
             function initMap() {
                 var map = new google.maps.Map(document.getElementById('map'), {
