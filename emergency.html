@@ -113,7 +113,7 @@
 	                <h2 class="ui medium primary header">
 	                    Current Updates
 	                </h2>
-	                <div id="accuweather"></div>
+	                <div id="nyc-alerts" class="rhythm"></div>
 	            </div>
 	           	<!--
 	                <div class="ui divided items feed">
@@ -213,6 +213,22 @@
                 $('#sidebar').click(function() {
                 	$('.ui.sidebar').sidebar('toggle');
                 });
+			    var configProfile = {
+				    //"profile": {"screenName": 'breakingweather'},
+				    "list": {"screenName": 'imarcthespot', 'listSlug':'nyc-list'},
+				    "domId": 'nyc-alerts',
+				    "maxTweets": 15,
+				    "title": "",
+				    "enableLinks": true, 
+				    "showUser": true,
+				    "showTime": true,
+				    "showImages": true,
+				    "showRetweet": false,
+				    "showInteraction": false,
+				    "dateFunction": '',
+				    "lang": 'en'
+			  	};
+				twitterFetcher.fetch(configProfile);
             });
         </script>
     </body>

@@ -268,3 +268,11 @@ footer {
     border: none!important;
     background-color: #54c4c3;
 }
+
+.rhythm {
+  margin: calc(2rem - 0.58035714rem) 0!important;
+}
+
+.ui.divided.items>.item {
+    border-width: 1px;
+}
