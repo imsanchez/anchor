@@ -60,39 +60,18 @@
 	                <p class="rhythm">
                         Update: There are black outs in parts of lower Manhattan and parts of Brooklyn. We are working hard to restore power.
                     </p>
+		            <div class="ui divider"></div>
+		            <p class="text-muted" id="static">Only ConEd can see your responses.</p>
+                    <div class="ui items" id="responses">
+                    	
+                   	</div>
 		            <div class="ui teal divider"></div>
 		            <p class="text-muted">
                         Communicate with ConEd with pre-programmed messages.
                     </p>
-                    <div class="ui items">
-                    	<div class="item d-block">
-                    		<a class="ui circular small disabled button right floated">
-			                    No Power
-			                </a>
-                    	</div>
-                    	<div class="item">
-                    		<p>
-                    			<strong>Ok, could share your location?</strong>
-                    		</p>
-                    	</div>
-                    	<div class="item d-block">
-                    		<a class="ui circular small disabled button right floated">
-			                    Send My Location
-			                </a>
-                    	</div>
-                    	<div class="item">
-                    		<p>
-                    			<strong>Thank you. We currently fixing the black in the East Village. Stay Tuned for more updates</strong>
-                    		</p>
-                    	</div>
-                   	</div>
-		            <div class="ui divider"></div>
 	            </div>
 	            <div class="container text-center">
-		            <p class="text-muted">
-                        Only ConEd can see your responses.
-                    </p>
-	            	<div class="ui vertical text menu mx-auto">
+	            	<div class="ui vertical text menu mx-auto" id="messages">
 	            		<div class="item">
 			                <a class="ui circular small secondary button">
 			                    No Power
@@ -116,15 +95,13 @@
 		            </div>
 	            	<div class="ui vertical text menu mx-auto">
 		                <div class="item">
-			                <a class="ui circular small alt button">
+			                <a class="ui circular small alt button" href="everyday.html">
 			                    Back to Home
 			                </a>
 		                </div>
 	                </div>
 	            </div>
 	        </section>
-
-
 	        <footer class="ui vertical basic inverted padded segment">
 	            <div class="container">
 	                <div class="row">
@@ -141,11 +118,40 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js" integrity="sha384-o9KO9jVK1Q4ybtHgJCCHfgQrTRNlkT6SL3j/qMuBMlDw3MmFrgrOHCOaIMJWGgK5" crossorigin="anonymous"></script>
         <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js" integrity="sha384-Ail6li4BXa+GztK4v0z2B8vXM69Kl5gw8vj3uPEna+3hHY9wAixO0hLotSJlOjlT" crossorigin="anonymous"></script>
         <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdZOHZxUTasVlFnoMk9U55zJN4ZAPfRVY&callback=initMap"></script>
         <script>
             $(function(){
                 $('.ui.radio.checkbox').checkbox();
                 $('#sidebar').click(function() {
                 	$('.ui.sidebar').sidebar('toggle');
+                });
+                $('#messages .item').each(function() {
+                	$(this).find('a').click(function() {
+                		var val = $.trim($(this).text());
+                    	$('#static').fadeIn("slow", function() {
+	                		$('<div style="display:none;" class="item d-block"><a class="ui circular small disabled button right floated">' + val + '</a></div>').appendTo($('#responses')).slideDown("slow", function() {
+		                		if(val == 'No Power') {
+		                			$('<div style="display:none;" class="item"><p><strong>Ok, could you please share your location?</strong></p></div>').appendTo($('#responses')).slideDown("slow");
+		                		}else if(val == 'Send My Location') {
+		                			$('<div style="display:none;" class="item"><p><strong>One second as I retrieve your location...</strong></p></div>').appendTo($('#responses')).slideDown("slow");
+								        if (navigator.geolocation) {
+						                  	navigator.geolocation.getCurrentPosition(function(position) {
+						                  		// Google Maps API convert to address here
+							                    console.log(position);
+						                  	}, function() {
+						                  		console.error('Error: The Geolocation service failed.');
+						                  	});
+						                } else {
+						                	console.error('Error: Your browser doesn\'t support geolocation.');
+						                }
+		                		}else if(val == 'Can I Go Outside?') {
+		                			$('<div style="display:none;" class="item"><p><strong>Currently it is not recommended. Emergencies only.</strong></p></div>').appendTo($('#responses')).slideDown("slow");
+		                		}else if(val == 'Gas Leak') {
+		                			$('<div style="display:none;" class="item"><p><strong>Please evacuate the premises, notify your landlord and share your location.</strong></p></div>').appendTo($('#responses')).slideDown("slow");
+		                		}
+	                		});
+	                	});
+                	});
                 });
             });
         </script>
