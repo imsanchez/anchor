@@ -121,6 +121,10 @@ footer {
     background-color: #54c4c3!important;
 }
 
+#nyc-alerts>.ui.items>.item>.content>.header {
+font-size: 12px;
+
+}
 
 .header-text-blue {font-size: 26pt; color: #07598A; text-align: left; font-weight: 700; line-height: 34pt;}
 
@@ -221,6 +225,9 @@ footer {
   padding-left: 20px;
   background-color:#54C4C3;
 }
+
+
+
 
 /* END of foooter */
 
