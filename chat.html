@@ -29,7 +29,8 @@
 	        <header class="ui top fixed massive inverted borderless menu">
                 <div class="nav-container menu">
 	                <div class="logo item">
-	                    Anchor
+	                    <img src="images/logo-light.png" class="hidden-sm-down"/>
+	                    <img src="images/icon-light.png" class="hidden-md-up"/>
 	                </div>
 	                <div class="right menu hidden-sm-down">
 	                    <a class="item">About Anchor</a>
@@ -117,7 +118,6 @@
 	            </div>
 	        </footer>
 	    </div>
-	    <a class="twitter-timeline" href="https://twitter.com/imarcthespot/lists/nyc-list"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js" integrity="sha384-o9KO9jVK1Q4ybtHgJCCHfgQrTRNlkT6SL3j/qMuBMlDw3MmFrgrOHCOaIMJWGgK5" crossorigin="anonymous"></script>
         <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js" integrity="sha384-Ail6li4BXa+GztK4v0z2B8vXM69Kl5gw8vj3uPEna+3hHY9wAixO0hLotSJlOjlT" crossorigin="anonymous"></script>
         <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
@@ -137,10 +137,40 @@
 		                			$('<div style="display:none;" class="item"><p><strong>Ok, could you please share your location?</strong></p></div>').appendTo($('#responses')).slideDown("slow");
 		                		}else if(val == 'Send My Location') {
 		                			$('<div style="display:none;" class="item"><p><strong>One second as I retrieve your location...</strong></p></div>').appendTo($('#responses')).slideDown("slow");
+								        var geocoder = new google.maps.Geocoder;
 								        if (navigator.geolocation) {
 						                  	navigator.geolocation.getCurrentPosition(function(position) {
 						                  		// Google Maps API convert to address here
-							                    console.log(position);
+							                    var pos = {
+							                      lat: position.coords.latitude,
+							                      lng: position.coords.longitude
+							                    };
+						                  		geocoder.geocode({'location': pos}, function(results, status) {
+											        if (status === 'OK') {
+											            if (results[1]) {
+											                $('<div id="map" style="max-height:200px;"></div>').appendTo($('#responses'));
+
+											                var map = new google.maps.Map(document.getElementById('map'), {
+											                  center: {lat: 40.7590562, lng: -74.0042502},
+											                  scrollwheel: false,
+														      navigationControl: false,
+														      mapTypeControl: false,
+														      scaleControl: false,
+														      draggable: false,
+											                  zoom: 15
+											                });
+
+										                    map.setCenter(pos);
+										                    new google.maps.Marker({map: map, position: pos});
+
+											              $('<div style="display:none;" class="item"><p><strong>We have your location at ' + results[1].formatted_address + '.</strong></p></div>').appendTo($('#responses')).slideDown("slow");
+											            } else {
+											              window.alert('No results found');
+											            }
+										          	} else {
+											            window.alert('Geocoder failed due to: ' + status);
+										          	}
+											    });
 						                  	}, function() {
 						                  		console.error('Error: The Geolocation service failed.');
 						                  	});

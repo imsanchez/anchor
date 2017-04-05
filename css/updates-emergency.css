@@ -283,3 +283,23 @@ font-size: 12px;
 .ui.divided.items>.item {
     border-width: 1px;
 }
+
+/* TWITTER FEED */
+#nyc-alerts .ui.items { /* LIST STYLE */
+
+}
+#nyc-alerts .ui.items > .item { /* ITEM STYLE */
+
+}
+#nyc-alerts .ui.items > .item > .content { /* CONTENT WRAPPER STYLE */
+
+}
+#nyc-alerts .ui.items > .item > .content > .header { /* HEADER STYLE */
+
+}
+#nyc-alerts .ui.items > .item > .content > .meta > .date { /* DATE STYLE */
+
+}
+#nyc-alerts .ui.items > .item > .content > .description { /* ACTUAL CONTENT PARAGRAPH STYLE */
+
+}

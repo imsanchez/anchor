@@ -27,7 +27,8 @@
 	        <header class="ui top fixed massive inverted borderless menu">
                 <div class="nav-container menu">
 	                <div class="logo item">
-	                    Anchor
+	                    <img src="images/logo-light.png" class="hidden-sm-down"/>
+	                    <img src="images/icon-light.png" class="hidden-md-up"/>
 	                </div>
 	                <div class="right menu hidden-sm-down">
 	                    <a class="item">About Anchor</a>
@@ -183,6 +184,22 @@
         <script async defer src="js/twitterFeed.min.js"></script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdZOHZxUTasVlFnoMk9U55zJN4ZAPfRVY&callback=initMap"></script>
         <script>
+			function showError(error) {
+			    switch(error.code) {
+			        case error.PERMISSION_DENIED:
+			            console.log("User denied the request for Geolocation.");
+			            break;
+			        case error.POSITION_UNAVAILABLE:
+			            console.log("Location information is unavailable.");
+			            break;
+			        case error.TIMEOUT:
+			            console.log("The request to get user location timed out.");
+			            break;
+			        case error.UNKNOWN_ERROR:
+			            console.log("An unknown error occurred.");
+			            break;
+			    }
+			}
             function initMap() {
                 var map = new google.maps.Map(document.getElementById('map'), {
                   center: {lat: 40.7590562, lng: -74.0042502},
@@ -201,9 +218,7 @@
                     };
                     map.setCenter(pos);
                     new google.maps.Marker({map: map, position: pos});
-                  }, function() {
-                    console.error('Error: The Geolocation service failed.');
-                  	});
+                  }, showError);
                 } else {
                 	console.error('Error: Your browser doesn\'t support geolocation.');
                 }
