@@ -56,7 +56,15 @@ header.ui.inverted.menu .logo.item {
     color: #07598A;
     font-weight: 600;
     font-size: 1.125rem;
+    padding:0;
 }
+
+
+.ui.menu .item>img:not(.ui)   {
+    max-height: 3em;
+    width: auto;
+}
+
 h1.ui.huge.header {
     font-weight: 800;
     color: #df3995;
@@ -307,7 +315,7 @@ footer {
   color: #555;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
 
   .section-white {
      padding: 1.5em 0;
@@ -315,7 +323,7 @@ footer {
 
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 992px) {
 
   .container {
     max-width: 930px;
