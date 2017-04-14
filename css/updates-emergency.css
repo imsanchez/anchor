@@ -35,10 +35,24 @@
 }
 html, body {
     font-size: 12pt;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
 }
-html,body,h1,h2,h3,h4,h5,h6,p,*:not(i) {
-    font-family: 'Roboto', sans-serif!important;
+html,body,h1,h2,h3,h4,h5,h6,*:not(i) {
+  
 }
+
+.ui.inverted.menu .item, .ui.inverted.menu .item>a:not(.ui) {
+
+  font-family: 'Bitter', serif!important;
+  font-size: 1.063rem;
+  background-color: #07598a;
+}
+
+
+.links { color:#54C4C3; text-decoration: underline; font-weight: 600 }
+
+
 .pusher {
     padding-top: 3.625rem;
 }
@@ -51,6 +65,7 @@ header {
 header.ui.inverted.menu .item {
     /*color: #5acfca;*/
     font-size: 1.063rem;
+    font-family: 'Bitter', serif;
 }
 header.ui.inverted.menu .logo.item {
     color: #5acfca;
@@ -66,24 +81,28 @@ h2.ui.medium.primary.header {
     color: #07598a;
     font-weight: 800;
     border-top: 0.1875rem solid #df3995;
-    text-transform: uppercase;
+
     padding-top: 0.3125rem;
     font-size: 20px;
+    font-family: 'Bitter', serif;
 }
 h2.ui.medium.primary.header .sub.header {
     margin: calc(2rem - 0.58035714rem) 0;
     text-transform: none;
     color: #54c4c3;
-    font-size: 2.125rem;
+    font-size: 1.8rem;
     font-weight: 200;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 a.ui.circular.small.primary.button {
     min-width: 9.5rem;
     background-color: #07598a;
+    font-family: 'Bitter', serif;
 }
 a.ui.circular.small.secondary.button {
     min-width: 9.5rem;
     background-color: #df3995;
+    font-family: 'Bitter', serif;
 }
 section.ui.vertical.basic.very.padded.primary.segment {
     background: #07598a;
@@ -92,8 +111,8 @@ h2.ui.medium.secondary.header {
     display: inline;
     color: #fff;
     border-top: 0.1875rem solid #df3995;
-    text-transform: uppercase;
     padding-top: 0.3125rem;
+    font-family: 'Bitter', serif;
 }
 h2.ui.medium.secondary.header .sub.header {
     margin: calc(2rem - 0.58035714rem) 0;
@@ -101,6 +120,7 @@ h2.ui.medium.secondary.header .sub.header {
     color: #fff;
     font-weight: 200;
     line-height: 26pt;
+
 }
 .ui.checkbox input[type=checkbox], .ui.checkbox input[type=radio] {
 }
@@ -119,12 +139,14 @@ h2.ui.medium.secondary.header .sub.header {
 }
 footer {
     background-color: #54c4c3!important;
+    font-size: 9pt!important;
+    font-family: 'Source Sans Pro', sans-serif!important;
 }
 
 
 .header-text-blue {font-size: 26pt; color: #07598A; text-align: left; font-weight: 700; line-height: 34pt;}
 
-.header-text-magenta {font-size: 26pt; color: #DF3A95; text-align: left; font-weight: 700; line-height: 34pt;}
+.header-text-magenta {font-family: 'Bitter', serif; font-size: 26pt; color: #DF3A95; text-align: left; font-weight: 700; line-height: 34pt;}
 
 .btn-magenta {
   color: #ffffff;
@@ -272,6 +294,12 @@ footer {
     background-color: #54c4c3;
 }
 
+a.ui.circular.small.alt.button {
+    color: #fff!important;
+    background-color: #54c4c3!important;
+    font-family: 'Bitter', serif;
+}
+
 .rhythm {
   margin: calc(2rem - 0.58035714rem) 0!important;
 }
@@ -291,11 +319,17 @@ footer {
 
 }
 #nyc-alerts .ui.items > .item > .content > .header { /* HEADER STYLE */
-font-size: 12px;
+font-size: 14pt;
+font-weight: 600;
+color: #54C4C3;
 }
+
 #nyc-alerts .ui.items > .item > .content > .meta > .date { /* DATE STYLE */
+font-size: 10pt;
+color: #828282;
 
 }
 #nyc-alerts .ui.items > .item > .content > .description { /* ACTUAL CONTENT PARAGRAPH STYLE */
-
+font-size: 12pt;
+color: #000000;
 }
