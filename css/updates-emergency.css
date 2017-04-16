@@ -47,6 +47,7 @@ html,body,h1,h2,h3,h4,h5,h6,*:not(i) {
   font-family: 'Bitter', serif!important;
   font-size: 1.063rem;
   background-color: #07598a;
+  color:#55C4C3;
 }
 
 
@@ -63,7 +64,7 @@ header {
     background-color: #07598a!important;
 }
 header.ui.inverted.menu .item {
-    /*color: #5acfca;*/
+    color: #5acfca;
     font-size: 1.063rem;
     font-family: 'Bitter', serif;
 }
@@ -71,7 +72,15 @@ header.ui.inverted.menu .logo.item {
     color: #5acfca;
     font-weight: 600;
     font-size: 1.125rem;
+    padding:0;
 }
+
+.ui.menu .item>img:not(.ui)   {
+    max-height: 3em;
+    width: auto;
+  
+}
+
 h1.ui.huge.header {
     font-weight: 800;
     color: #df3995;
