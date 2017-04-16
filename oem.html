@@ -59,7 +59,7 @@
 	        <section class="ui vertical basic very padded segment pt-0"> 
 	            <div class="container">
 	                <h2 class="ui medium primary header">
-	                    Chat with Office of Emergency Management New York City
+	                    Chat with Office of Emergency Management
 	                </h2>
 	                <p class="rhythm">
                         Update: There are black outs in parts of lower Manhattan and parts of Brooklyn. If you are in this location, stay indoors
@@ -78,15 +78,11 @@
 	            	<div class="ui vertical text menu mx-auto" id="messages">
 	            		<div class="item">
 			                <a class="ui circular small secondary button">
-			                    I need water
+			                    I need food and water
 			                </a>
 		                </div>
 		              
-		                <div class="item">
-			                <a class="ui circular small secondary button">
-			                    I need food
-			                </a>
-		                </div>
+		             
 		                <div class="item">
 			                <a class="ui circular small secondary button">
 			                    Is the water safe to drink?
@@ -143,7 +139,7 @@
                 		var val = $.trim($(this).text());
                     	$('#static').fadeIn("slow", function() {
 	                		$('<div style="display:none;" class="item d-block"><a class="ui circular small disabled button right floated">' + val + '</a></div>').appendTo($('#responses')).slideDown("slow", function() {
-		                		if(val == 'I do not have power') {
+		                		if(val == 'I need food and water') {
 		                			$('<div style="display:none;" class="item"><p><strong>Ok, could you please share your location?</strong></p></div>').appendTo($('#responses')).slideDown("slow");
 		                		}else if(val == 'Here is my location') {
 		                			$('<div style="display:none;" class="item"><p><strong>One second as I retrieve your location...</strong></p></div>').appendTo($('#responses')).slideDown("slow");
@@ -187,10 +183,8 @@
 						                } else {
 						                	console.error('Error: Your browser doesn\'t support geolocation.');
 						                }
-		                		}else if(val == 'Is it safe to go outside?') {
-		                			$('<div style="display:none;" class="item"><p><strong>Currently it is not recommended. Emergencies only.</strong></p></div>').appendTo($('#responses')).slideDown("slow");
-		                		}else if(val == 'I smell gas') {
-		                			$('<div style="display:none;" class="item"><p><strong>Please evacuate the premises, notify your landlord and share your location.</strong></p></div>').appendTo($('#responses')).slideDown("slow");
+		                		}else if(val == 'Is the water safe to drink?') {
+		                			$('<div style="display:none;" class="item"><p><strong>Yes it is! There is no water contamination.</strong></p></div>').appendTo($('#responses')).slideDown("slow");
 		                		}
 	                		});
 	                	});
