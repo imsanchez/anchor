@@ -75,22 +75,7 @@
                     </p>
 	            </div>
 	            <div class="container text-center">
-	            	<div class="ui vertical text menu mx-auto" id="messages">
-	            		<div class="item">
-			                <a class="ui circular small secondary button">
-			                    I need food and water
-			                </a>
-		                </div>
-		                <div class="item">
-			                <a class="ui circular small secondary button">
-			                    Is the water safe to drink?
-			                </a>
-		                </div>
-		                  <div class="item">
-			                <a class="ui circular small secondary button">
-			                   Here is my location
-			                </a>
-		                </div>
+	            	<div class="ui vertical text menu mx-auto" id="buttons">
 		            </div>
 	            	<div class="ui vertical text menu mx-auto">
 		                <div class="item">
@@ -141,25 +126,129 @@
 			        }
 			    }
 			};
+			function button(text, response) {
+				return $('<div class="item"><a class="ui circular small secondary message button" data-response="' + response + '">' + text + '</a></div>').appendTo($('#buttons'));
+			}
+			function response(text, response) {
+				$('<div style="display:none;" class="item d-block"><a class="ui circular small disabled button right floated">' + text + '</a></div>').appendTo($('#responses')).slideDown("slow", function() {
+		                $('<div style="display:none;" class="item"><p><strong>' + response + '</strong></p></div>').appendTo($('#responses')).slideDown("slow");
+		        });
+			}
+			function getlocation() {
+				var geocoder = new google.maps.Geocoder;
+		        if (navigator.geolocation) {
+                  	navigator.geolocation.getCurrentPosition(function(position) {
+                  		// Google Maps API convert to address here
+	                    var pos = {
+	                      lat: position.coords.latitude,
+	                      lng: position.coords.longitude
+	                    };
+                  		geocoder.geocode({'location': pos}, function(results, status) {
+					        if (status === 'OK') {
+					            if (results[1]) {
+					                $('<div id="map" style="max-height:200px;"></div>').appendTo($('#responses'));
+
+					                var map = new google.maps.Map(document.getElementById('map'), {
+					                  center: {lat: 40.7590562, lng: -74.0042502},
+					                  scrollwheel: false,
+								      navigationControl: false,
+								      mapTypeControl: false,
+								      scaleControl: false,
+								      draggable: false,
+					                  zoom: 15
+					                });
+
+				                    map.setCenter(pos);
+				                    new google.maps.Marker({map: map, position: pos});
+
+					              $('<div style="display:none;" class="item"><p><strong>We have your location at ' + results[1].formatted_address + '.</strong></p></div>').appendTo($('#responses')).slideDown("slow");
+					            } else {
+					              window.alert('No results found');
+					            }
+				          	} else {
+					            window.alert('Geocoder failed due to: ' + status);
+				          	}
+					    });
+                  	}, function() {
+                  		console.error('Error: The Geolocation service failed.');
+                  	});
+                } else {
+                	console.error('Error: Your browser doesn\'t support geolocation.');
+                }
+			}
             $(function(){
+                $('.ui.radio.checkbox').checkbox();
+                $('#sidebar').click(function() {
+                	$('.ui.sidebar').sidebar('toggle');
+                });
+
             	var depPar = getUrlParameter('dep');
-            	console.log(depPar);
             	var typePar = getUrlParameter('type');
+
+            	switch(typePar) {
+            		case 'power':
+            			response('I do not have power', 'Ok, could you please share your location?');
+            			break;
+            		case 'gas':
+            			response('I smell gas', 'Please evacuate the premises, notify your landlord and share your location.');
+            			break;
+            		case 'power':
+            			response('I do not have power', 'Ok, could you please share your location?');
+            			break;
+            		case 'invasion':
+            			response('I do not have power', 'Ok, could you please share your location?');
+            			break;
+            		case 'safety':
+            			response('Is it safe to go outside?', 'Currently it is not recommended. Emergencies only.');
+            			break;
+            		case 'medical':
+            			response('Is it safe to go outside?', 'Ok, could you please share your location?');
+            			break;
+            		case 'water':
+            			response('Is the water safe to drink?', 'Yes it is! There is no water contamination.');
+            			break;
+            		case 'food':
+            			response('I need food and water', 'Ok, could you please share your location?');
+            			break;
+            		case 'stuck':
+            			response('Is it safe to go outside?', 'Please remain calm and share your location.');
+            			break;
+            		case 'fire':
+            			response('There is a fire!', 'Ok, could you please share your location?');
+            			break;
+            	}
+
             	var department = null;
             	switch(depPar) {
             		case 'coned':
+            			button('I do not have power', 'Ok, could you please share your location?');
+            			button('Is it safe to go outside?', 'Currently it is not recommended. Emergencies only.');
+            			button('I smell gas', '');
+            			button('Here is my location', 'function-getlocation');
             			department = 'ConEdison';
             			break;
             		case 'nypd':
+            			button('There was a break-in', 'Ok, could you please share your location?');
+            			button('I need medical help', 'Ok, could you please share your location?');
+            			button('Here is my location', 'function-getlocation');
             			department = 'the New York Police Department';
             			break;
             		case 'fdny':
+            			button('I am stuck, cannot get out', 'Please remain calm and share your location.');
+            			button('There is a fire!', 'Ok, could you please share your location?');
+            			button('Here is my location', 'function-getlocation');
             			department = 'the Fire Department of New York';
             			break;
             		case 'oem':
+            			button('I need food and water', 'Ok, could you please share your location?');
+            			button('Is the water safe to drink?', 'Yes it is! There is no water contamination.');
+            			button('Here is my location', 'function-getlocation');
             			department = 'the Office of Emergency Management';
             			break;
             		case undefined:
+            			button('I need food and water', 'Ok, could you please share your location?');
+            			button('Is the water safe to drink?', 'Yes it is! There is no water contamination.');
+            			button('Here is my location', 'function-getlocation');
             			department = 'the Office of Emergency Management';
             			break;
             	}
@@ -167,68 +256,19 @@
             		$(this).text(department);
             	});
 
-
-
-                $('.ui.radio.checkbox').checkbox();
-                $('#sidebar').click(function() {
-                	$('.ui.sidebar').sidebar('toggle');
-                });
-                $('#messages .item').each(function() {
-                	$(this).find('a').click(function() {
-                		var val = $.trim($(this).text());
-                    	$('#static').fadeIn("slow", function() {
-	                		$('<div style="display:none;" class="item d-block"><a class="ui circular small disabled button right floated">' + val + '</a></div>').appendTo($('#responses')).slideDown("slow", function() {
-		                		if(val == 'I need food and water') {
-		                			$('<div style="display:none;" class="item"><p><strong>Ok, could you please share your location?</strong></p></div>').appendTo($('#responses')).slideDown("slow");
-		                		}else if(val == 'Here is my location') {
-		                			$('<div style="display:none;" class="item"><p><strong>One second as I retrieve your location...</strong></p></div>').appendTo($('#responses')).slideDown("slow");
-								        var geocoder = new google.maps.Geocoder;
-								        if (navigator.geolocation) {
-						                  	navigator.geolocation.getCurrentPosition(function(position) {
-						                  		// Google Maps API convert to address here
-							                    var pos = {
-							                      lat: position.coords.latitude,
-							                      lng: position.coords.longitude
-							                    };
-						                  		geocoder.geocode({'location': pos}, function(results, status) {
-											        if (status === 'OK') {
-											            if (results[1]) {
-											                $('<div id="map" style="max-height:200px;"></div>').appendTo($('#responses'));
-
-											                var map = new google.maps.Map(document.getElementById('map'), {
-											                  center: {lat: 40.7590562, lng: -74.0042502},
-											                  scrollwheel: false,
-														      navigationControl: false,
-														      mapTypeControl: false,
-														      scaleControl: false,
-														      draggable: false,
-											                  zoom: 15
-											                });
-
-										                    map.setCenter(pos);
-										                    new google.maps.Marker({map: map, position: pos});
-
-											              $('<div style="display:none;" class="item"><p><strong>We have your location at ' + results[1].formatted_address + '.</strong></p></div>').appendTo($('#responses')).slideDown("slow");
-											            } else {
-											              window.alert('No results found');
-											            }
-										          	} else {
-											            window.alert('Geocoder failed due to: ' + status);
-										          	}
-											    });
-						                  	}, function() {
-						                  		console.error('Error: The Geolocation service failed.');
-						                  	});
-						                } else {
-						                	console.error('Error: Your browser doesn\'t support geolocation.');
-						                }
-		                		}else if(val == 'Is the water safe to drink?') {
-		                			$('<div style="display:none;" class="item"><p><strong>Yes it is! There is no water contamination.</strong></p></div>').appendTo($('#responses')).slideDown("slow");
-		                		}
-	                		});
-	                	});
+            	$(document).on('click', '.message.button', function () {
+        			var val = $.trim($(this).text());
+            		var data = $.trim($(this).attr('data-response'));
+                	$('#static').fadeIn("slow", function() {
+                		if(data.startsWith('function')) {
+                			response(val, 'One second as I retrieve your location...');
+                			var func = data.substring(data.indexOf('-') + 1);
+                			window[func]();
+                		} else {
+                			response(val, data);
+                		}
                 	});
-                });
+        		});
             });
         </script>
     </body>
