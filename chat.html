@@ -59,13 +59,13 @@
 	        <section class="ui vertical basic very padded segment pt-0"> 
 	            <div class="container">
 	                <h2 class="ui medium primary header">
-	                    Chat with Office of Emergency Management
+	                    Chat with <span class="department"></span>
 	                </h2>
 	                <p class="rhythm">
                         Update: There are black outs in parts of lower Manhattan and parts of Brooklyn. If you are in this location, stay indoors
                     </p>
 		            <div class="ui divider"></div>
-		            <p class="text-muted" id="static">Only Office of Emergency Management can see your responses.</p>
+		            <p class="text-muted" id="static">Only <span class="department"></span> can see your responses.</p>
                     <div class="ui items" id="responses">
                     	
                    	</div>
@@ -81,8 +81,6 @@
 			                    I need food and water
 			                </a>
 		                </div>
-		              
-		             
 		                <div class="item">
 			                <a class="ui circular small secondary button">
 			                    Is the water safe to drink?
@@ -129,7 +127,48 @@
         <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdZOHZxUTasVlFnoMk9U55zJN4ZAPfRVY"></script>
         <script>
+        	var getUrlParameter = function getUrlParameter(sParam) {
+			    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+			        sURLVariables = sPageURL.split('&'),
+			        sParameterName,
+			        i;
+
+			    for (i = 0; i < sURLVariables.length; i++) {
+			        sParameterName = sURLVariables[i].split('=');
+
+			        if (sParameterName[0] === sParam) {
+			            return sParameterName[1] === undefined ? true : sParameterName[1];
+			        }
+			    }
+			};
             $(function(){
+            	var depPar = getUrlParameter('dep');
+            	console.log(depPar);
+            	var typePar = getUrlParameter('type');
+            	var department = null;
+            	switch(depPar) {
+            		case 'coned':
+            			department = 'ConEdison';
+            			break;
+            		case 'nypd':
+            			department = 'the New York Police Department';
+            			break;
+            		case 'fdny':
+            			department = 'the Fire Department of New York';
+            			break;
+            		case 'oem':
+            			department = 'the Office of Emergency Management';
+            			break;
+            		case undefined:
+            			department = 'the Office of Emergency Management';
+            			break;
+            	}
+            	$('.department').each(function() {
+            		$(this).text(department);
+            	});
+
+
+
                 $('.ui.radio.checkbox').checkbox();
                 $('#sidebar').click(function() {
                 	$('.ui.sidebar').sidebar('toggle');
