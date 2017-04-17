@@ -11,58 +11,97 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css" integrity="sha384-m1fl5JKXaEocK0a/l9MLZd7pvyIwC5VlcXtW8NpMLO/yO5WFDY4fB3/fweZ0niwK" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900">
+        <link href="https://fonts.googleapis.com/css?family=Bitter:400,700|Source+Sans+Pro:300,400,600" rel="stylesheet">
 
      	<link rel="stylesheet" href="css/updates-emergency.css">
 
+   
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha384-bPV3mA2eo3edoq56VzcPBmG1N1QVUfjYMxVIJPPzyFJyFZ8GFfN7Npt06Zr23qts" crossorigin="anonymous"></script>
     </head>
+
     <body>
-    	<div class="ui wide massive sidebar inverted teal vertical menu">
+    	<div class="ui wide massive sidebar inverted vertical menu">
             <a class="item">About Anchor</a>
-            <a class="item" href="chat.html">Local Agencies</a>
             <a class="item" href="tel:911">Call 911</a>
+            
     	</div>
 	  	<div class="pusher">
 	        <header class="ui top fixed massive inverted borderless menu">
                 <div class="nav-container menu">
 	                <div class="logo item">
-	                    <img src="images/logo-light.png" class="hidden-sm-down"/>
-	                    <img src="images/icon-light.png" class="hidden-md-up"/>
+	                    <img src="images/anchor-teal-desktop-logo.png" class="hidden-sm-down"/>
+	                    <img src="images/anchor-teal-mobile-logo.png" class="hidden-md-up"/>
 	                </div>
 	                <div class="right menu hidden-sm-down">
 	                    <a class="item">About Anchor</a>
-	                    <a class="item">Local Agencies</a>
 	                    <a class="item" href="tel:911">Call 911</a>
+	                   
 	                </div>
 	                <div class="right menu hidden-md-up">
 	                    <a class="item" id="sidebar"><i class="material-icons">menu</i></a>
 	                </div>
 	            </div>
-	        </header>
+	        </header>	
+	        
 
-	        <section class="ui vertical basic very padded segment"> 
+	       <section class="ui vertical basic very padded segment"> 
 	            <div class="container">
-	                <h1 class="header-text-magenta"> We have detected an emergency. Not to worry, Anchor will guide you through this. </h1>
-	                <a class="ui circular small primary button">
-	                    Stay Updated
-	                </a>
-	            </div>
-	        </section>
-
-	        <section class="ui vertical basic very padded pt-0 segment"> 
-	            <div class="container">
-	                <h2 class="ui medium primary header">
-	                    Immediate Assistance 
-	                    <div class="sub header">
-	                        If you are in a life threathing situation, please call 911 immediately. 
-	                    </div>
-	                </h2>
-	                <a class="ui circular small secondary button" href="tel:911">
+	                <h1 class="header-text-magenta"> If you are in a life threathing situation, please call 911 immediately.  </h1>
+	                <a class="ui circular small primary button" href="tel:911">
 	                    Call 911
 	                </a>
 	            </div>
 	        </section>
+
+	         <section class="ui vertical basic very padded primary inverted segment"> 
+	            <div class="container">
+	                <h2 class="ui medium secondary header">
+	                    What is your emergency?</h2> 
+
+	                     <a class="ui circular small secondary button" href="coned.html">
+	                    I do not have power
+	                </a>
+
+	                <a class="ui circular small secondary button" href="coned.html">
+	                    I smell gas
+	                </a>
+
+	                 <a class="ui circular small secondary button" href="nypd.html">
+	                   There was a break-in
+	                </a>
+
+	                 <a class="ui circular small secondary button" href="nypd.html">
+	                   Is it safe to go outside?
+	                </a>
+
+	                  <a class="ui circular small secondary button" href="nypd.html">
+	                  I need medical help
+	                </a>
+
+	                <a class="ui circular small secondary button" href="oem.html">
+	                   Is the water safe to drink?
+	                </a>
+
+	                 <a class="ui circular small secondary button" href="oem.html">
+	                  I need food and water
+	                </a>
+
+	                 <a class="ui circular small secondary button" href="fdny.html">
+	                  I am stuck. I can't get out
+	                </a>
+
+	                 <a class="ui circular small secondary button" href="fdny.html">
+	                 There is a fire!
+	                </a>
+
+	               
+
+	                </section>
+
+
+
+	          <!-- KEEP THIS SECTION, DO NOT DELETE-->
 
 	        <section class="ui vertical basic very padded primary inverted segment"> 
 	            <div class="container">
@@ -75,17 +114,26 @@
 	                <form class="ui inverted form">
 	                    <div class="grouped fields">
 	                        <div class="disabled field">
-	                            <div class="ui radio checkbox">
+	                           <div class="ui radio checkbox">
 	                                <input type="radio" name="department" tabindex="0" class="hidden">
-	                                <label>NYC Mayor's Office (offline)</label>
+	                                <label>New York Mayor's office (offline)</label>
 	                            </div>
 	                        </div>
-	                        <div class="disabled field">
+
+	                          <div class="field">
 	                            <div class="ui radio checkbox">
-	                                <input type="radio" name="department" tabindex="0" class="hidden">
-	                                <label>New York Police Department (offline)</label>
+	                                <input type="radio" name="department" checked="" tabindex="0" class="hidden">
+	                                <label><a class="links" href="oem.html">Office of Emergency Management</a></label>
 	                            </div>
 	                        </div>
+
+	                        <div class="field">
+	                            <div class="ui radio checkbox">
+	                                <input type="radio" name="department" checked="" tabindex="0" class="hidden">
+	                                <label><a class="links" href="nypd.html">New York Police Department (online)</a></label>
+	                            </div>
+	                        </div>
+	                        
 	                        <div class="disabled field">
 	                            <div class="ui radio checkbox">
 	                                <input type="radio" name="department" tabindex="0" class="hidden">
@@ -101,14 +149,25 @@
 	                        <div class="field">
 	                            <div class="ui radio checkbox">
 	                                <input type="radio" name="department" checked="" tabindex="0" class="hidden">
-	                                <label>ConEdison (online)</label>
+	                                <label><a class="links" href="coned.html">ConEdison (online)</a></label>
 	                            </div>
 	                        </div>
 	                    </div>
 	              </form>
 	            </div>
 	        </section>
-	        <div id="map" style="min-height:300px;"></div>
+
+	         <section class="ui vertical basic very padded segment"> 
+	            <div class="container">
+	                <h2 class="ui medium primary header">
+	                   Your current location</h2>
+
+	                
+	            </div>
+	        </section>
+<div id="map" style="min-height:150px;"></div>
+	     
+
 	        <section class="ui vertical basic very padded segment"> 
 	            <div class="container">
 	                <h2 class="ui medium primary header">
@@ -116,68 +175,33 @@
 	                </h2>
 	                <div id="nyc-alerts" class="rhythm"></div>
 	            </div>
-	           	<!--
-	                <div class="ui divided items feed">
-	                    <div class="item">
-	                        <div class="content">
-	                            <div class="header">Weather</div>
-	                            <div class="description">
-	                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-	                            </div>
-	                            <div class="extra col-6 float-left">
-	                                <small>via AccuWeather</small>
-	                            </div>
-	                            <div class="extra col-6 float-right text-right">
-	                                <small>3 minutes ago</small>
-	                            </div>
-	                        </div>
-	                    </div>
-	                    <div class="item">
-	                        <div class="content">
-	                            <div class="header">Weather</div>
-	                            <div class="description">
-	                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-	                            </div>
-	                            <div class="extra col-6 float-left">
-	                                <small>via AccuWeather</small>
-	                            </div>
-	                            <div class="extra col-6 float-right text-right">
-	                                <small>3 minutes ago</small>
-	                            </div>
-	                        </div>
-	                    </div>
-	                    <div class="item">
-	                        <div class="content">
-	                            <div class="header">Weather</div>
-	                            <div class="description">
-	                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-	                            </div>
-	                            <div class="extra col-6 float-left">
-	                                <small>via AccuWeather</small>
-	                            </div>
-	                            <div class="extra col-6 float-right text-right">
-	                                <small>3 minutes ago</small>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	             -->
+	           
 	        </section>
+
+	      <!--   <section class="ui vertical basic very padded segment"> 
+	            <div class="container">
+	                <h1 class="header-text-magenta"> We have detected an emergency. Not to worry, Anchor will guide you through this. </h1>
+	                <a class="ui circular small primary button">
+	                    Drop an Anchor
+	                </a>
+	            </div>
+	        </section> -->
 
 	        <footer class="ui vertical basic inverted padded segment">
 	            <div class="container">
 	                <div class="row">
 	                    <div class="col-6">
-	                        Anchor.guide
+	                       MFA IxD 2017 at SVA 
 	                    </div>
 	                    <div class="col-6 text-right">
-	                       Copyright 2017
+	                       Elushika Weerakoon
 	                    </div>
 	                </div>
 	            </div>
 	        </footer>
 	    </div>
+	    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha384-bPV3mA2eo3edoq56VzcPBmG1N1QVUfjYMxVIJPPzyFJyFZ8GFfN7Npt06Zr23qts" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js" integrity="sha384-o9KO9jVK1Q4ybtHgJCCHfgQrTRNlkT6SL3j/qMuBMlDw3MmFrgrOHCOaIMJWGgK5" crossorigin="anonymous"></script>
         <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js" integrity="sha384-Ail6li4BXa+GztK4v0z2B8vXM69Kl5gw8vj3uPEna+3hHY9wAixO0hLotSJlOjlT" crossorigin="anonymous"></script>
         <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
@@ -232,12 +256,12 @@
 				    //"profile": {"screenName": 'breakingweather'},
 				    "list": {"screenName": 'elushika', 'listSlug':'Anchor'},
 				    "domId": 'nyc-alerts',
-				    "maxTweets": 10,
+				    "maxTweets": 7,
 				    "title": "",
 				    "enableLinks": true, 
 				    "showUser": true,
 				    "showTime": true,
-				    "showImages": true,
+				    "showImages": false,
 				    "showRetweet": false,
 				    "showInteraction": false,
 				    "dateFunction": '',

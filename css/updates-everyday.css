@@ -35,10 +35,33 @@
 }
 html, body {
     font-size: 12pt;
+    font-family: 'Source Sans Pro', sans-serif!important;
+    font-weight: 300;
+  
 }
-html,body,h1,h2,h3,h4,h5,h6,p,*:not(i) {
-    font-family: 'Roboto', sans-serif!important;
+h1,h2,h3,h4,h5,h6,*:not(i) {
+    
 }
+
+.links { color:#DF3A95; text-decoration: underline; font-weight: 600 }
+.label-copy {
+  font-weight:400;
+  font-family: 'Bitter', serif;
+  color:#54C4C3!important;
+}
+
+.ui.inverted.menu .item, .ui.inverted.menu .item>a:not(.ui) {
+
+  font-family: 'Bitter', serif!important;
+  font-size: 1.063rem;
+  color:#04598B;
+
+}
+
+p {
+  line-height: 20pt;
+}
+
 .pusher {
     padding-top: 3.625rem;
 }
@@ -51,12 +74,23 @@ header {
 header.ui.inverted.menu .item {
     color: #07598A;
     font-size: 1.063rem;
+    font-family: 'Bitter', serif;
 }
 header.ui.inverted.menu .logo.item {
     color: #07598A;
     font-weight: 600;
     font-size: 1.125rem;
+    padding:0;
+
 }
+
+
+.ui.menu .item>img:not(.ui)   {
+    max-height: 3em;
+    width: auto;
+  
+}
+
 h1.ui.huge.header {
     font-weight: 800;
     color: #df3995;
@@ -66,9 +100,10 @@ h2.ui.medium.primary.header {
     color: #54C4C3;
     font-weight: 800;
     border-top: 0.1875rem solid #07598A;
-    text-transform: uppercase;
     padding-top: 0.3125rem;
     font-size: 20px;
+    font-family: 'Bitter', serif;
+
 }
 h2.ui.medium.primary.header .sub.header {
     margin: calc(2rem - 0.58035714rem) 0;
@@ -76,14 +111,17 @@ h2.ui.medium.primary.header .sub.header {
     color: #54c4c3;
     font-size: 2.125rem;
     font-weight: 200;
+
 }
 a.ui.circular.small.primary.button {
     min-width: 9.5rem;
     background-color: #D71596;
+    font-family: 'Bitter', serif;
 }
 a.ui.circular.small.secondary.button {
     min-width: 9.5rem;
     background-color: #07598A;
+    font-family: 'Bitter', serif;
 }
 section.ui.vertical.basic.very.padded.primary.segment {
     background: #54C4C3;
@@ -94,6 +132,7 @@ h2.ui.medium.secondary.header {
     border-top: 0.1875rem solid #07598A;
     text-transform: uppercase;
     padding-top: 0.3125rem;
+    font-family: 'Bitter', serif;
 }
 h2.ui.medium.secondary.header .sub.header {
     margin: calc(2rem - 0.58035714rem) 0;
@@ -101,6 +140,7 @@ h2.ui.medium.secondary.header .sub.header {
     color: #fff;
     font-weight: 200;
     line-height: 26pt;
+
 }
 .ui.checkbox input[type=checkbox], .ui.checkbox input[type=radio] {
 }
@@ -123,10 +163,12 @@ h2.ui.medium.secondary.header .sub.header {
 }
 footer {
     background-color: #DF3A95!important;
+    font-size: 9pt!important;
+    font-family: 'Source Sans Pro', sans-serif!important;
 }
 
 
-.header-text-blue {font-size: 26pt; color: #07598A; text-align: left; font-weight: 700; line-height: 34pt;}
+.header-text-blue {font-family: 'Bitter', serif; font-size: 26pt; color: #07598A; text-align: left; font-weight: 700; line-height: 34pt;}
 
 .header-text-magenta {font-size: 26pt; color: #DF3A95; text-align: left; font-weight: 700; line-height: 34pt;}
 
@@ -200,6 +242,7 @@ footer {
 }
 
 .body-copy {
+    font-family: 'Source Sans Pro', sans-serif;
     font-weight:300;
     font-size: 12pt;
     line-height: 23pt;
@@ -225,6 +268,8 @@ footer {
     color:#07598A;
     text-transform: none;
     padding-bottom: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 .row.local-agencies {
@@ -307,7 +352,7 @@ footer {
   color: #555;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 720px) {
 
   .section-white {
      padding: 1.5em 0;
@@ -315,7 +360,7 @@ footer {
 
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 992px) {
 
   .container {
     max-width: 930px;
@@ -326,6 +371,7 @@ footer {
 
 #sidebar i {
     font-size: 1.74rem;
+
 }
 
 .nav-container {

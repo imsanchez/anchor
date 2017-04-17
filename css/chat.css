@@ -37,7 +37,7 @@ html, body {
     font-size: 12pt;
 }
 html,body,h1,h2,h3,h4,h5,h6,p,*:not(i) {
-    font-family: 'Roboto', sans-serif!important;
+  
 }
 .pusher {
     padding-top: 3.625rem;
